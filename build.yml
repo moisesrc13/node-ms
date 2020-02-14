@@ -1,0 +1,32 @@
+---
+builder: npm
+type: microservice
+cd:
+  profile: multizoneCluster
+  config:
+    all:
+      envVars:
+        KEY_1: key-1-value-all
+        KEY_2: key-2-value-all 
+    branch:
+      envVars:
+        KEY2: key-2-value-bvault:v1ranch
+    test:
+      envVars:
+        KEY2: key-2-value-test
+        KEY3: key-3-value-test
+        SECRET2: vault:v1:f9Wu8H8M18IcAJbevhJ7SVsIR7VVQy36bXPq2Lem2Zj5tYsImRF5Ou+W2z5bhT4ovQ==
+    stage:
+      envVars:
+        KEY2: key-2-value-stage
+    production:
+      envVars:
+        KEY1: key-1-value-prod
+        KEY2: key-2-value-prod
+        SECRET1: vault:v1:pSdPTNPwex/v+eynldUnV+NmWB+wXJqC2JyQ8TnWStnKDTJVM7oOCsVeYvy3ji6qAA==
+        SECRET2: vault:v1:6lS9sFiFaeHu4tl6fwYROAlG9hBIkghC+f8deHzMDaUv54kPP8IwP1IJLmu/SX+AOA==
+  instances: 3
+  resources:
+    memory: "128Mi"
+    cpu: "100m"
+

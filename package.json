@@ -1,0 +1,68 @@
+{
+  "name": "nodejs-microservice",
+  "version": "1.0.0",
+  "description": "Test Application for Nodejs-microservice ",
+  "main": "server.js",
+  "typings": "server.d.ts",
+  "author": "Test",
+  "scripts": {
+    "clean": "rm -rf build",
+    "env:local": "npm run clean && npm run compile && node build/server.js",
+    "compile": "tsc -p tsconfig.json",
+    "compile:watch": "npm run compile -- -w",
+    "watch": "nodemon -e ts -w ./src -x npm run watch:serve",
+    "watch:serve": "ts-node src/server.ts | bunyan",
+    "unit-test": "nyc ava --no-color --tap",
+    "metrics:unit-test": "mkdir -p build/unit-tests && nyc ava --no-color --tap | tap-json > build/unit-tests/results.json  && nyc report --reporter json-summary --report-dir build/coverage",
+    "test:functional": "ava **/tests/functional/*.test.js --tap",
+    "analyze": "tslint -p tsconfig.json -t codeFrame src/**/*.ts",
+    "metrics:analyze": "mkdir -p build/lint && eslint -f json src/**/*.ts > build/lint/eslint.json; tslint -p tsconfig.json -t json src/**/*.ts > build/lint/tslint.json",
+    "package": "cp package.json build/. && npm run docs && npm run api",
+    "docs": "typedoc src/server.ts --excludePrivate --mode file --theme minimal --out build/docs",
+    "docs:json": "typedoc --mode file --json build/docs/typedoc.json src/server.ts",
+    "api": "cp -r node_modules/swagger-ui-dist build/api && sed -i -e 's#http://petstore.swagger.io/v2##g' build/api/index.html"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.4",
+    "@types/node": "^9.6.2",
+    "@types/restify": "^5.0.7",
+    "@types/restify-errors": "^4.3.2",
+    "@types/swagger-jsdoc": "^0.0.2",
+    "cross-env": "^5.1.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "nodemon": "^1.17.3",
+    "nyc": "^11.6.0",
+    "shelljs": "^0.8.2",
+    "sonarqube-scanner": "^2.5.0",
+    "source-map-support": "^0.5.4",
+    "tap-json": "^1.0.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.1",
+    "typescript-eslint-parser": "^14.0.0"
+  },
+  "dependencies": {
+    "ava": "^0.25.0",
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "gulp": "^4.0.2",
+    "restify": "^6.4.0",
+    "restify-errors": "^5.0.0",
+    "swagger-jsdoc": "^1.9.7",
+    "swagger-ui-dist": "^3.9.0",
+    "tslib": "^1.9.0"
+  },
+  "ava": {
+    "files": [
+      "build/**/**/*.spec.js",
+      "build/**/*.spec.js"
+    ],
+    "source": [
+      "build/**/**/*",
+      "build/**/*"
+    ]
+  }
+}

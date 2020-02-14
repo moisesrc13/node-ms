@@ -1,0 +1,10 @@
+node_modules/
+data/
+build/
+.nyc_output/
+*.log
+*.retry
+.yarnclean
+.npmrc
+*.tgz
+values.yaml

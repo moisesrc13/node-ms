@@ -1,0 +1,59 @@
+{
+  "env": {
+      "node": true,
+      "es6": true
+  },
+  "parser": "typescript-eslint-parser",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "sourceType": "module"
+  },
+  "extends": [
+      "airbnb-base"
+  ],
+  "rules": {
+      "no-const-assign": "warn",
+      "no-this-before-super": "warn",
+      "no-undef": "off",
+      "no-unreachable": "warn",
+      "no-unused-vars": "off",
+      "constructor-super": "warn",
+      "valid-typeof": "warn",
+      "linebreak-style": "off",
+      "max-len": "off",
+      "import/extensions": "off",
+      "import/no-unresolved": "off",
+      "indent": "off",
+      "indent-legacy": [
+          "error",
+          2,
+          {
+              "SwitchCase": 1
+          }
+      ],
+      "import/no-extraneous-dependencies": [
+          "error",
+          {
+              "devDependencies": true
+          }
+      ],
+      "import/first": "error",
+      "padded-blocks": "error",
+      "comma-dangle": "error",
+      "space-before-function-paren": "error",
+      "prefer-arrow-callback": "error",
+      "prefer-const": "error",
+      "arrow-parens": "error",
+      "camelcase": "off",
+      "class-methods-use-this": "off",
+      "consistent-return": "off",
+      "no-empty-function": "off",
+      "no-useless-constructor": "off",
+      "no-return-assign": "off",
+      "import/prefer-default-export": "off",
+      "no-use-before-define": "off",
+      "import/no-duplicates": "off"
+  }
+}

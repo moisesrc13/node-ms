@@ -1,0 +1,6 @@
+projectKey=nodejs-microservice
+serverUrl=https://sonar.atlbz186051.atl.dst.ibm.com
+serverVersion=7.1.0.11001
+dashboardUrl=https://sonar.atlbz186051.atl.dst.ibm.com/dashboard/index/nodejs-microservice
+ceTaskId=AW0MVzw9if-0qybpkvkw
+ceTaskUrl=https://sonar.atlbz186051.atl.dst.ibm.com/api/ce/task?id=AW0MVzw9if-0qybpkvkw

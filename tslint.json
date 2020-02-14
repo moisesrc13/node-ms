@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "tslint:recommended"   
+  ],
+  "jsRules": {},
+  "rules": {
+    "quotemark": [true, "single"],
+    "eofline": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "member-access": [true, "no-public"],
+    "no-trailing-whitespace": false,
+    "no-consecutive-blank-lines": false,
+    "no-empty": false,
+    "ordered-imports": false,
+    "import/extensions": false,
+    "no-var-requires": false
+  },
+  "rulesDirectory": [],
+  "typedef": {
+    "severity": "error",
+    "options": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration",
+      "object-destructuring",
+      "array-destructuring"
+    ]
+  }
+
+}
