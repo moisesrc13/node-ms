@@ -25,7 +25,7 @@ export class App {
 
   private handleHealth() {
     return (req, res, next) => {
-      res.send('OK');
+      res.send('lsuarezz');
     };
   }
 }
