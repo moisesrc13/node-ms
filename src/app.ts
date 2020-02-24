@@ -1,6 +1,7 @@
 
 import * as restify from 'restify';
 
+
 export class App {
   server;
   settings;
@@ -25,7 +26,7 @@ export class App {
 
   private handleHealth() {
     return (req, res, next) => {
-      res.send('OK');
+      res.send('Armando test');
     };
   }
 }
