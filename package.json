@@ -34,7 +34,7 @@
     "eslint-plugin-import": "^2.10.0",
     "nodemon": "^1.17.3",
     "nyc": "^11.6.0",
-    "shelljs": "^0.8.2",
+    "shelljs": "^0.8.5",
     "sonarqube-scanner": "^2.5.0",
     "source-map-support": "^0.5.4",
     "tap-json": "^1.0.0",
